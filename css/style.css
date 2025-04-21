@@ -1,1 +1,203 @@
 
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #0e0e0e;
+  color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.container {
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 32px;
+}
+
+#searchInput {
+  padding: 12px 20px;
+  width: 90%;
+  max-width: 450px;
+  margin-bottom: 25px;
+  border-radius: 30px;
+  border: none;
+  font-size: 16px;
+  background: #1e1e1e;
+  color: white;
+}
+
+#searchInput::placeholder {
+  color: #aaa;
+}
+
+#channelContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 0 20px;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.channel {
+  background: #white;
+  padding: 15px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s;
+  border: 1px solid #333;
+}
+
+.channel:hover {
+  background: #2c2c2c;
+}
+
+.player-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 15, 15, 0.95);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.hidden {
+  display: none;
+}
+
+#iptvPlayer {
+  width: 90%;
+  max-width: 900px;
+  height: auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+#closePlayer {
+  background: #e63946;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+#closePlayer:hover {
+  background: #ff4b5c;
+}
+
+#loadingSpinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 6px solid #444;
+  border-top: 6px solid #fff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  z-index: 101;
+}
+
+@keyframes spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.footer {
+  margin-top: 40px;
+  padding: 20px;
+  background: rgba(30, 30, 30, 0.8);
+  color: white;
+  font-size: 14px;
+  text-align: center;
+}
+
+.footer p {
+  margin: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1f1f1f;
+  color: white;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu-toggle {
+  font-size: 20px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.sidebar {
+  position: fixed;
+  top: 30px;
+  left: 0;
+  width: 220px;
+  height: 100%;
+  background: #2c2c2c;
+  padding-top: 20px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+  transform: translateX(0);
+  transition: transform 0.3s ease;
+  z-index: 999;
+}
+
+.sidebar.hidden {
+  transform: translateX(-100%);
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  padding: 15px 20px;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+}
+
+.sidebar a:hover {
+  background: #444;
+                                }
+  
